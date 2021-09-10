@@ -29,10 +29,7 @@ RUN set -x \
     # Clean-up
  && cd / \
  && apk del --purge .build-deps \
- && rm -rf /tmp/* \
-    # Verify
- && cpuminer --cputest \
- && cpuminer --version
+ && rm -rf /tmp/*
 
 ENTRYPOINT ["dumb-init"]
 CMD ["cpuminer", "--help"]
